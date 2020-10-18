@@ -1,2 +1,2 @@
 # Toptutor.hk
-Repo for increasing operational efficiency of toptutor.hk
+Repo for increasing operational efficiency of toptutor.hk, a startup in education. 
