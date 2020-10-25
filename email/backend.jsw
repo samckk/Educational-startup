@@ -1,0 +1,14 @@
+import {sendWithService} from 'backend/sendGrid';
+
+export function sendEmail(subject, body) {
+  const key = // left out for security purpose;
+  const sender = "toptutorhongkong@gmail.com";
+  const recipient = "toptutorhongkong@gmail.com";
+  return sendWithService(key, sender, recipient, subject, body);
+}
+
+export function sendEmailWithRecipient(subject, body, recipient) {
+  const key = // left out for security purpose;
+  const sender = "toptutorhongkong@gmail.com";
+  return sendWithService(key, sender, recipient, subject, body);
+}
