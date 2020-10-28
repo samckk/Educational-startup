@@ -1,6 +1,7 @@
 # ETL process to update data warehouse weekly
 
 import pandas as pd
+import numpy as np
 pd.set_option('display.max_columns', None)
 df = pd.read_csv('In-TutorList.csv')
 df.drop_duplicates(subset='Telephone', keep='first', inplace=True)
@@ -10,6 +11,7 @@ cols = cols[:8]+cols[-1:]+cols[8:9]+cols[-4:-1]+cols[9:-4]
 df = df[cols]
 df['Selfintro'] = df['Selfintro'].str.strip()
 df['Selfintro'] = df['Selfintro'].str.replace("\n","")
+df = df.replace('未放榜/不適用', np.NaN)
 
 unsub = pd.read_csv('Unsubscribe.csv')
 unsublist = unsub['email'].tolist()
